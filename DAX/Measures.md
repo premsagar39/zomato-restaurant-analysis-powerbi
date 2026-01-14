@@ -1,6 +1,6 @@
-🔢 Core Performance Measures
+# 🔢 Core Performance Measures
 
-# Total Restaurants
+### Total Restaurants
 
 Total Restaurants =
 DISTINCTCOUNT(zomato[RestaurantID])
