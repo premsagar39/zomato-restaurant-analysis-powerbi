@@ -10,7 +10,7 @@ DISTINCTCOUNT(zomato[RestaurantID])
 Total Votes =
 SUM(zomato[Votes])
 
-#Average Rating
+### Average Rating
 Average Rating =
 AVERAGE(zomato[Rating])
 
