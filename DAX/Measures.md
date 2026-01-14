@@ -1,18 +1,20 @@
 🔢 Core Performance Measures
 
--- Total Restaurants
+# Total Restaurants
+
 Total Restaurants =
 DISTINCTCOUNT(zomato[RestaurantID])
 
--- Total Votes
+# Total Votes
+
 Total Votes =
 SUM(zomato[Votes])
 
--- Average Rating
+#Average Rating
 Average Rating =
 AVERAGE(zomato[Rating])
 
--- Votes per Restaurant
+# Votes per Restaurant
 Votes per Restaurant =
 DIVIDE(
     [Total Votes],
@@ -21,14 +23,14 @@ DIVIDE(
 
 🌍 Country-Level Analysis Measures
 
--- Country Average Rating
+# Country Average Rating
 Country Avg Rating =
 CALCULATE(
     [Average Rating],
     ALL(zomato)
 )
 
--- Country Rank by Rating
+# Country Rank by Rating
 Country Rank =
 RANKX(
     ALL(country[Country Name]),
@@ -39,35 +41,35 @@ RANKX(
 
 📦 Delivery & Digital Adoption Measures
 
--- Online Delivery Restaurants
+# Online Delivery Restaurants
 Online Delivery Restaurants =
 CALCULATE(
     DISTINCTCOUNT(zomato[RestaurantID]),
     zomato[Has_Online_delivery] = "yes"
 )
 
--- Offline Delivery Restaurants
+#  Offline Delivery Restaurants
 Offline Delivery Restaurants =
 CALCULATE(
     DISTINCTCOUNT(zomato[RestaurantID]),
     zomato[Has_Online_delivery] = "no"
 )
 
--- Online Delivery %
+# Online Delivery %
 Online Delivery % =
 DIVIDE(
     [Online Delivery Restaurants],
     [Total Restaurants]
 )
 
--- Offline Delivery %
+# Offline Delivery %
 Offline Delivery % =
 DIVIDE(
     [Offline Delivery Restaurants],
     [Total Restaurants]
 )
 
--- Total Delivery Ratio
+# Total Delivery Ratio
 Total Delivery Ratio =
 DIVIDE(
     [Offline Delivery Restaurants],
@@ -76,14 +78,14 @@ DIVIDE(
 
 ⭐ Popularity & Engagement Measures
 
--- Popular Restaurants
+# Popular Restaurants
 Popular Restaurants =
 CALCULATE(
     DISTINCTCOUNT(zomato[RestaurantName]),
     zomato[Votes] >= 1000
 )
 
--- Not Popular Restaurants
+# Not Popular Restaurants
 Not Popular Restaurants =
 CALCULATE(
     DISTINCTCOUNT(zomato[RestaurantName]),
@@ -91,21 +93,21 @@ CALCULATE(
 )
 
 💰 Pricing & Premium Analysis Measures
--- Premium Restaurants
+# Premium Restaurants
 Premium Restaurants =
 CALCULATE(
     DISTINCTCOUNT(zomato[RestaurantID]),
     zomato[Average_Cost_for_two] >= 1500
 )
 
--- Not Premium Restaurants
+# Not Premium Restaurants
 Not Premium Restaurants =
 CALCULATE(
     DISTINCTCOUNT(zomato[RestaurantID]),
     zomato[Average_Cost_for_two] < 1500
 )
 
--- Price Range Share %
+# Price Range Share %
 Price Range Share % =
 DIVIDE(
     COUNT(zomato[RestaurantID]),
@@ -117,7 +119,7 @@ DIVIDE(
 
 ⚠️ Risk Identification Measures 
 
--- High Risk Restaurants
+# High Risk Restaurants
 High Risk Restaurants =
 CALCULATE(
     COUNT(zomato[RestaurantID]),
@@ -128,7 +130,7 @@ CALCULATE(
     )
 )
 
--- Luxury Risk Restaurants
+# Luxury Risk Restaurants
 Luxury Risk Restaurants =
 CALCULATE(
     COUNT(zomato[RestaurantID]),
@@ -138,7 +140,7 @@ CALCULATE(
 
 🧩 Data Quality Measures
 
--- Duplicate Restaurant Name Count
+# Duplicate Restaurant Name Count
 Duplicate Restaurant Name Count =
 CALCULATE(
     COUNT(zomato[RestaurantID]),
