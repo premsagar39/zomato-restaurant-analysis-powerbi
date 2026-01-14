@@ -1,4 +1,5 @@
 🔢 Core Performance Measures
+
 -- Total Restaurants
 Total Restaurants =
 DISTINCTCOUNT(zomato[RestaurantID])
@@ -19,6 +20,7 @@ DIVIDE(
 )
 
 🌍 Country-Level Analysis Measures
+
 -- Country Average Rating
 Country Avg Rating =
 CALCULATE(
@@ -114,6 +116,7 @@ DIVIDE(
 )
 
 ⚠️ Risk Identification Measures 
+
 -- High Risk Restaurants
 High Risk Restaurants =
 CALCULATE(
@@ -134,6 +137,7 @@ CALCULATE(
 )
 
 🧩 Data Quality Measures
+
 -- Duplicate Restaurant Name Count
 Duplicate Restaurant Name Count =
 CALCULATE(
